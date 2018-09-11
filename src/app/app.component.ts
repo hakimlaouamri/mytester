@@ -5,6 +5,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
+import { ContactsPage } from '../pages/contacts/contacts';
+import { DermatoPage } from '../pages/dermato/dermato';
+import { HomeobesitePage } from '../pages/homeobesite/homeobesite';
+import { TraitementsPage } from '../pages/traitements/traitements';
+import { ProfilPage } from '../pages/profil/profil';
 
 @Component({
   templateUrl: 'app.html'
@@ -14,15 +19,20 @@ export class MyApp {
 
   rootPage: any = HomePage;
 
-  pages: Array<{title: string, component: any}>;
+  pages: Array<{title: string,icon:string, component: any}>;
 
   constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
     this.initializeApp();
 
     // used for an example of ngFor and navigation
     this.pages = [
-      { title: 'Home', component: HomePage },
-      { title: 'List', component: ListPage }
+      { title: 'Home',icon:'list-box', component: HomePage },
+      { title: 'List',icon:'list-box', component: ListPage },
+      { title: 'Profil',icon:'list-box', component: ProfilPage },
+      { title: 'Contacts',icon:'list-box', component: ContactsPage },
+      { title: 'Dermato',icon:'list-box', component: DermatoPage },
+      { title: 'Obésité',icon:'list-box', component: HomeobesitePage },
+      { title: 'Traitements',icon:'list-box', component: TraitementsPage },
     ];
 
   }
